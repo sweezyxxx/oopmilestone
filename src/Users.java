@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Users {
 
-    // Fields for user information
     private String name;
     private String login;
     private String password;
@@ -11,7 +10,6 @@ public class Users {
     private double height;
     private String gender;
 
-    // Constructor
     public Users(String name, String login, String password, int age, double weight, double height, String gender) {
         this.name = name;
         this.login = login;
@@ -22,7 +20,6 @@ public class Users {
         this.gender = gender;
     }
 
-    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -89,12 +86,10 @@ public class Users {
         System.out.println("Gender: " + gender);
     }
 
-    // Method to verify login
     public boolean verifyLogin(String inputLogin, String inputPassword) {
         return this.login.equals(inputLogin) && this.password.equals(inputPassword);
     }
 
-    // Method to create a user by taking input
     public static Users createUserFromInput() {
         Scanner scanner = new Scanner(System.in);
 
