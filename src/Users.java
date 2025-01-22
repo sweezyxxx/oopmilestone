@@ -76,7 +76,6 @@ public class Users {
         this.gender = gender;
     }
 
-    // Method to display user information
     public void displayUserInfo() {
         System.out.println("Name: " + name);
         System.out.println("Login: " + login);
