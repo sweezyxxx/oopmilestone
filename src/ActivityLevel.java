@@ -1,6 +1,16 @@
 public enum ActivityLevel {
-    SEDENTARY,       // Малоподвижный образ жизни 0-1 тренировка в неделлю
-    LIGHTLY_ACTIVE,  // Легкая активность 2 тренировки в неделлю
-    MODERATELY_ACTIVE, // Умеренная активность 3-4 тренировки в неделлю
-    VERY_ACTIVE      // Высокая активность 5 тренировки в неделлю
+    SEDENTARY("Sedentary"),
+    LIGHTLY_ACTIVE("Lightly Active"),
+    MODERATELY_ACTIVE("Moderately Active"),
+    VERY_ACTIVE("Very Active");
+
+    private final String shortName;
+
+    ActivityLevel(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
 }

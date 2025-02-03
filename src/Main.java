@@ -5,10 +5,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ArrayList<Users> list = new ArrayList<>();
         while (true){
-            System.out.println("\nMenu:");
-            System.out.println("1. Register User");
-            System.out.println("2. Login User");
-            System.out.println("3. Exit");
+            System.out.println("════════════════════════");
+            System.out.println("       MAIN MENU");      
+            System.out.println("════════════════════════");
+            System.out.println(" 1 - Register User");
+            System.out.println(" 2 - Login User");
+            System.out.println(" 3 - Exit");
+            System.out.println("════════════════════════");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
             sc.nextLine();

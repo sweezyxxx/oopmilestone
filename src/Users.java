@@ -143,24 +143,31 @@ public class Users {
         }
     }
     
-
     public void displayUserInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("Login: " + login);
-        System.out.println("Age: " + age);
-        System.out.println("Weight: " + weight + " kg");
-        System.out.println("Height: " + height + " cm");
-        System.out.println("Gender: " + gender);
-        System.out.println("Activity Level: " + (activityLevel != null ? activityLevel : "Not set"));
+        System.out.println("\n======================================");
+        System.out.println("             USER PROFILE            ");
+        System.out.println("======================================");
+        System.out.printf(" Name:          %s\n", name);
+        System.out.printf(" Login:         %s\n", login);
+        System.out.printf(" Age:           %d years\n", age);
+        System.out.printf(" Weight:        %.1f kg\n", weight);
+        System.out.printf(" Height:        %.1f cm\n", height);
+        System.out.printf(" Gender:        %s\n", gender);
+        System.out.printf(" Activity:      %s\n", 
+            activityLevel != null ? activityLevel.getShortName() : "Not set");
     
         try {
             double bmi = calculateBMI();
-            System.out.printf("BMI: %.2f\n", bmi);
-            System.out.println("BMI Category: " + getBMICategory());
+            String bmiCategory = getBMICategory();
+            
+            System.out.println("--------------------------------------");
+            System.out.printf(" BMI:           %.2f (%s)\n", bmi, bmiCategory);
+            System.out.println("======================================\n");
         } catch (IllegalArgumentException e) {
-            System.out.println("Unable to calculate BMI: " + e.getMessage());
+            System.out.println("⚠ Unable to calculate BMI: " + e.getMessage());
         }
     }
+    
     
 
     public boolean verifyLogin(String inputLogin, String inputPassword) {
@@ -197,16 +204,16 @@ public class Users {
         scanner.nextLine();
     
         String gender = switch (genderChoice) {
-            case 1 -> "male";
-            case 2 -> "female";
+            case 1 -> "Male";
+            case 2 -> "Female";
             default -> throw new IllegalArgumentException("Invalid gender choice. Must be 1 (Male) or 2 (Female).");
         };
 
         System.out.println("Choose activity level: ");
-        System.out.println("1. Sedentary");
-        System.out.println("2. Lightly Active");
-        System.out.println("3. Moderately Active");
-        System.out.println("4. Very Active");
+        System.out.println("1. Sedentary [Little to no exercise]");
+        System.out.println("2. Lightly Active [Light exercise 1-2 days/week]");
+        System.out.println("3. Moderately Active [Moderate exercise 3-4 days/week]");
+        System.out.println("4. Very Active [Intense exercise 5+ days/week]");
         int activityChoice = scanner.nextInt();
 
         ActivityLevel activityLevel = switch (activityChoice) {
