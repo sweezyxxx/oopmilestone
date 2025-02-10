@@ -48,13 +48,13 @@ public class CalorieCount {
             double remainingCalories = requiredCalories - (proteinCalories + fatCalories);
             double carbs = remainingCalories / 4;
 
-            System.out.println("\n══════════════════════════════════════════════════════════════════");
+            System.out.println("\n==================================================================");
             System.out.printf(" Goal: %-15s  |  Recommended daily intake: %.2f kcal\n", goal, requiredCalories);
-            System.out.println("══════════════════════════════════════════════════════════════════");
+            System.out.println("==================================================================");
             System.out.printf(" Protein:        %.1f g (%.1f g/kg body weight)\n", proteins, proteinPerKg);
             System.out.printf(" Fats:           %.1f g (%.1f g/kg body weight)\n", fats, fatPerKg);
             System.out.printf(" Carbohydrates:  %.1f g (Remaining calories)\n", carbs);
-            System.out.println("══════════════════════════════════════════════════════════════════\n");
+            System.out.println("==================================================================\n");
 
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
